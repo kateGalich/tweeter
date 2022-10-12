@@ -61,5 +61,20 @@ $(document).ready(function() {
   };
 
   renderTweets(data);
+
+  $("#newTweetForm").submit(function(e) {
+    e.preventDefault();
+  });
+
+
+
+
+
+
+
+
+
+
+
 })
 
