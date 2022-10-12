@@ -51,7 +51,11 @@ $(document).ready(function() {
 
   const showError = function(message) {
     $(".new-tweet .error span").text(message);
-    $(".new-tweet .error").toggleClass("hidden", !message);
+    if (message) {
+      $(".new-tweet .error").slideDown("slow");
+    } else {
+      $(".new-tweet .error").slideUp("slow");
+    }
   };
 
   $("#newTweetForm").submit(function(e) {
