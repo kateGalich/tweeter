@@ -64,6 +64,12 @@ $(document).ready(function() {
 
   $("#newTweetForm").submit(function(e) {
     e.preventDefault();
+    const data = $( this ).serialize();
+    $.ajax('/tweets', { method: 'POST', data })
+    .then(function () {
+      console.log('Success: ');
+    });
+
   });
 
 
