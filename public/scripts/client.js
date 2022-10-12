@@ -13,7 +13,6 @@ $(document).ready(function() {
       return div.innerHTML;
     };
     const time = timeago.format(tweetObj.created_at);
-    console.log(tweetObj);
     const $tweet = $(`<article class="tweet">
     <header>
       <span class = "author">
@@ -36,7 +35,9 @@ $(document).ready(function() {
     return $tweet;
   };
 
+  //show tweets on screen most recent first
   const renderTweets = function(tweetsArr) {
+    //ignore  tweets than we already displayed
     tweetsArr.splice(0, $('#all-tweets').children().length);
     tweetsArr.forEach(tweet => {
       const $tweet = createTweetElement(tweet);
@@ -69,7 +70,7 @@ $(document).ready(function() {
       showError("Text is too long");
       return;
     }
-    showError('');
+    showError(''); //remove error from the screen
 
     // Send tweet to the server
     const data = $(this).serialize();
@@ -78,11 +79,24 @@ $(document).ready(function() {
         loadtweets();
         $("#tweet-text").val('');
         $(".counter").text('140');
-        console.log('Success: ');
       });
   });
 
   $("#tweet-text").val('');
   loadtweets();
-})
 
+  // Compose button animation
+  function down() {
+    $("nav i").animate({
+      marginTop: "10px", marginBottom: "0px"
+    }, 400, "swing", up);
+
+  }
+  function up() {
+    $("nav i").animate({
+      marginTop: "0px",
+      marginBottom: "10px"
+    }, 400, "swing", down);
+  }
+  down();
+})

@@ -37,7 +37,7 @@ main {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- 
+ /* responsive design */
 @media (min-width: 1024px){
   body {
     align-items: flex-start;

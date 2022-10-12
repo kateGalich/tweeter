@@ -10,6 +10,7 @@
   color: aliceblue;
 }
 
+ /* responsive design */
 @media (min-width: 1024px){
   #userProfile {
     width: 40%;
