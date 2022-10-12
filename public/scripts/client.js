@@ -4,20 +4,29 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
+
 $(document).ready(function() {
 
   const createTweetElement = function(tweetObj) {
+    const escape = function (str) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
+
     //const time = timeago.format(tweetObj.created_at);
     let time = "x";
+
     const $tweet = $(`<article class="tweet">
     <header>
       <span class = "author">
-        <img src="${tweetObj.user.avatars}">
-        <span> ${tweetObj.user.name}</span>
+        <img src="${escape(tweetObj.user.avatars)}">
+        <span> ${escape(tweetObj.user.name)}</span>
       </span>
-      <span class ="nick"> ${tweetObj.user.handle}</span>
+      <span class ="nick"> ${escape(tweetObj.user.handle)}</span>
     </header>
-    <p class="message"> ${tweetObj.content.text}</p>
+    <p class="message"> ${escape(tweetObj.content.text)}</p>
     <footer>
       <div>${time} days ago</div>
       <span>
@@ -33,7 +42,6 @@ $(document).ready(function() {
 
   const renderTweets = function(tweetsArr) {
     tweetsArr.splice(0, $('#all-tweets').children().length);
-    tweetsArr.reverse();
     tweetsArr.forEach(tweet => {
       const $tweet = createTweetElement(tweet);
       $('#all-tweets').prepend($tweet);
