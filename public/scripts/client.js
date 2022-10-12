@@ -32,12 +32,18 @@ $(document).ready(function() {
   };
 
   const renderTweets = function(tweetsArr) {
+    tweetsArr.splice(0, $('#all-tweets').children().length);
+    tweetsArr.reverse();
     tweetsArr.forEach(tweet => {
       const $tweet = createTweetElement(tweet);
-      $('#all-tweets').append($tweet);
+      $('#all-tweets').prepend($tweet);
     });
   };
 
+  const loadtweets = function() {
+    $.ajax('/tweets', { method: 'GET' })
+      .then(renderTweets);
+  };
 
   $("#newTweetForm").submit(function(e) {
     e.preventDefault();
@@ -56,22 +62,13 @@ $(document).ready(function() {
     const data = $(this).serialize();
     $.ajax('/tweets', { method: 'POST', data })
       .then(function() {
+        loadtweets();
         console.log('Success: ');
       });
   });
 
-  const loadtweets = function() {
-    $.ajax('/tweets', { method: 'GET' })
-      .then(renderTweets);
-  };
-
+  
   loadtweets();
-
-
-
-
-
-
 
 })
 
