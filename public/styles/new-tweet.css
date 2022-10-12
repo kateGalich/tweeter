@@ -27,7 +27,10 @@ border-bottom: 3px solid black;
   justify-content: space-between;
   margin-top: 20px;
   font-family: 'Bungee';
+}
 
+.warning {
+  color: red;
 }
 
 

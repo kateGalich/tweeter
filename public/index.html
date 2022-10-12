@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/all-tweets.css" type="text/css" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
@@ -30,6 +31,8 @@
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
 </head>
 
 <body>
@@ -42,7 +45,7 @@
     </div>
   </nav>
 
-  <header>
+  <header id='userProfile'>
     <div>
       <img src="/images/profile-hex.png">
     </div>
@@ -55,8 +58,8 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
-     
-      <form action = "/tweets/" method = "POST">
+
+      <form action="/tweets/" method="POST">
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
         <div id="form-footer">
@@ -65,7 +68,85 @@
         </div>
       </form>
     </section>
-    
+
+    <section id="all-tweets">
+      <article class="tweet">
+        <header>
+          <span class = "author">
+            <i class="fa-solid fa-user-ninja"></i>
+            <span> Kate Kate</span>
+          </span>
+          <span class ="nick"> @MrsKate</span>
+        </header>
+        <p class="message">Hello world!</p>
+        <footer>
+          <div>10 days ago</div>
+          <span>
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </span>
+        </footer>
+      </article>
+
+      <article class="tweet">
+        <header>
+          <span class = "author">
+            <i class="fa-solid fa-user-ninja"></i>
+            <span> Kate Kate</span>
+          </span>
+          <span class ="nick"> @MrsKate</span>
+        </header>
+        <p class="message">Hello world!</p>
+        <footer>
+          <div>10 days ago</div>
+          <span>
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </span>
+        </footer>
+      </article>
+
+      <article class="tweet">
+        <header>
+          <span class = "author">
+            <i class="fa-solid fa-user-ninja"></i>
+            <span> Kate Kate</span>
+          </span>
+          <span class ="nick"> @MrsKate</span>
+        </header>
+        <p class="message">Hello world!</p>
+        <footer>
+          <div>10 days ago</div>
+          <span>
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </span>
+        </footer>
+      </article>
+
+      <article class="tweet">
+        <header>
+          <span class = "author">
+            <i class="fa-solid fa-user-ninja"></i>
+            <span> Kate Kate</span>
+          </span>
+          <span class ="nick"> @MrsKate</span>
+        </header>
+        <p class="message">Hello world!</p>
+        <footer>
+          <div>10 days ago</div>
+          <span>
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </span>
+        </footer>
+      </article>
+
+    </section>
   </main>
 </body>
 
