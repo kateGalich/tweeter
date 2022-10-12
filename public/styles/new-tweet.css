@@ -2,25 +2,28 @@
   background-color: #4056A1;
   color: white;
   padding: 8px;
-  
+
 }
-.new-tweet form{
+
+.new-tweet form {
   display: flex;
   flex-direction: column;
   margin: 20px;
 }
+
 .new-tweet label {
-font-weight: bold;
-font-size: larger;
+  font-weight: bold;
+  font-size: larger;
 }
 
 #tweet-text {
-background-color: transparent;
-border: transparent;
+  background-color: transparent;
+  border: transparent;
 
-border-bottom: 3px solid black;
+  border-bottom: 3px solid black;
 
 }
+
 #form-footer {
   display: flex;
   flex-direction: row;
@@ -33,4 +36,13 @@ border-bottom: 3px solid black;
   color: red;
 }
 
+.error {
+  color: red;
+  border: 3px solid red;
+  padding: 10px;
 
+}
+
+.hidden {
+  display: none;
+}

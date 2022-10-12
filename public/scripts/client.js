@@ -49,30 +49,36 @@ $(document).ready(function() {
       .then(renderTweets);
   };
 
+  const showError = function(message) {
+    $(".new-tweet .error span").text(message);
+    $(".new-tweet .error").toggleClass("hidden", !message);
+  };
+
   $("#newTweetForm").submit(function(e) {
     e.preventDefault();
-
     // Validation
     const text = $('#tweet-text').val();
     if (!text) {
-      alert("Text required");
+      showError("Text required");
       return;
     } else if (text.length > 140) {
-      alert("Text is too long");
+      showError("Text is too long");
       return;
     }
+    showError('');
 
     // Send tweet to the server
     const data = $(this).serialize();
     $.ajax('/tweets', { method: 'POST', data })
       .then(function() {
         loadtweets();
+        $("#tweet-text").val('');
+        $(".counter").text('140');
         console.log('Success: ');
       });
   });
 
-
+  $("#tweet-text").val('');
   loadtweets();
-
 })
 
