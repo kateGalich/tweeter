@@ -35,6 +35,9 @@
 .warning {
   color: red;
 }
+.hidden {
+  display: none;
+}
 
 .error {
   color: red;

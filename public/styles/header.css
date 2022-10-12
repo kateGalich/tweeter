@@ -7,4 +7,13 @@
   align-items:center;
   background-color: #4056A1;
   background-image: url("../images/black-linen.png");
+  color: aliceblue;
+}
+
+@media (min-width: 1024px){
+  #userProfile {
+    width: 40%;
+    margin-left: 20px;
+    margin-top: 160px;
+  }
 }
