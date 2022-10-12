@@ -33,9 +33,10 @@ article.tweet header .nick{
   font-weight: bold;
 }
 
-article.tweet header i {
-  font-size: xx-large;
+article.tweet header img {
   padding-right: 8px;
+  width: 48px;
+  height: 48px;
 }
 
 article.tweet .message {
