@@ -4,20 +4,16 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
-
 $(document).ready(function() {
 
   const createTweetElement = function(tweetObj) {
-    const escape = function (str) {
+    const escape = function(str) {
       let div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
       return div.innerHTML;
     };
-
-    //const time = timeago.format(tweetObj.created_at);
-    let time = "x";
-
+    const time = timeago.format(tweetObj.created_at);
+    console.log(tweetObj);
     const $tweet = $(`<article class="tweet">
     <header>
       <span class = "author">
@@ -75,7 +71,7 @@ $(document).ready(function() {
       });
   });
 
-  
+
   loadtweets();
 
 })
