@@ -14,7 +14,7 @@ Made with 💖 and HTML, CSS, JS, jQuery and AJAX front-end skills, and Node, Ex
 
 ![Home page](screenshots/HomePage.png)
 
-![Validation error](screenshots/Error.png)
+![Validation error](screenshots/ErrorMsg.png)
 
 ## Dependencies
 
